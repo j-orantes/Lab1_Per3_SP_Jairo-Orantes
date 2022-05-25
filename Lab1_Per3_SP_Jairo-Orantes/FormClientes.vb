@@ -9,7 +9,6 @@ Public Class FormClientes
         txtNombreClientes.Enabled = False
         txtApellidoCliente.Enabled = False
         txtdireccionCliente.Enabled = False
-        txtfechaCliente.Enabled = False
         txtTelefonoClientes.Enabled = False
         txtEmailCliente.Enabled = False
 
@@ -94,7 +93,6 @@ Public Class FormClientes
         txtNombreClientes.Enabled = True
         txtApellidoCliente.Enabled = True
         txtdireccionCliente.Enabled = True
-        txtfechaCliente.Enabled = True
         txtTelefonoClientes.Enabled = True
         txtEmailCliente.Enabled = True
 
@@ -110,6 +108,7 @@ Public Class FormClientes
                 dts.hapellido = txtApellidoCliente.Text
                 dts.hdireccion = txtdireccionCliente.Text
                 dts.htelefono = txtTelefonoClientes.Text
+                dts.hemail = txtTelefonoClientes.Text
 
                 If func.insertar(dts) Then
                     MessageBox.Show("Datos registrados", "Guardando registros", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -120,7 +119,6 @@ Public Class FormClientes
                     txtApellidoCliente.Enabled = False
                     txtdireccionCliente.Enabled = False
                     txtTelefonoClientes.Enabled = False
-                    txtfechaCliente.Enabled = False
                     txtEmailCliente.Enabled = False
                     'Acciones de botones
                     bttGuardarCliente.Enabled = False
@@ -138,35 +136,27 @@ Public Class FormClientes
         End If
     End Sub
 
-    'Al hacer click en un registro de cliente en el DataGridView,
-    'los datos del cliente seleccionado se transladan a los text box correspondientes
     Private Sub DataGridViewClientes_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewClientes.CellClick
 
-        'MessageBox.Show("Edite los datos y para confirmar, pulse el botón EDITAR", "Editar registro de cliente", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        'Cajas de texto
         txtIdClientes.Text = DataGridViewClientes.SelectedCells.Item(1).Value
         txtNombreClientes.Text = DataGridViewClientes.SelectedCells.Item(2).Value
         txtApellidoCliente.Text = DataGridViewClientes.SelectedCells.Item(3).Value
         txtdireccionCliente.Text = DataGridViewClientes.SelectedCells.Item(4).Value
-        txtfechaCliente.Text = DataGridViewClientes.SelectedCells.Item(5).Value
-        txtTelefonoClientes.Text = DataGridViewClientes.SelectedCells.Item(6).Value
-        txtEmailCliente.Text = DataGridViewClientes.SelectedCells.Item(7).Value
+        txtTelefonoClientes.Text = DataGridViewClientes.SelectedCells.Item(5).Value
+        txtEmailCliente.Text = DataGridViewClientes.SelectedCells.Item(6).Value
 
-        'Habilitar el boton Editar
+
         bttEditarCliente.Enabled = True
 
-        'Desabilitar el boton Agregar, Guardar, Eliminar
+
         bttAgregarCliente.Enabled = False
         bttGuardarCliente.Enabled = False
         bttEliminarCliente.Enabled = False
 
-
-        'Habilitar los Text Box
         txtIdClientes.Enabled = False
         txtNombreClientes.Enabled = True
         txtApellidoCliente.Enabled = True
         txtdireccionCliente.Enabled = True
-        txtfechaCliente.Enabled = True
         txtTelefonoClientes.Enabled = True
         txtEmailCliente.Enabled = True
     End Sub
@@ -197,7 +187,6 @@ Public Class FormClientes
                         txtNombreClientes.Enabled = False
                         txtApellidoCliente.Enabled = False
                         txtdireccionCliente.Enabled = False
-                        txtfechaCliente.Enabled = False
                         txtTelefonoClientes.Enabled = False
                         txtEmailCliente.Enabled = False
 
@@ -218,7 +207,6 @@ Public Class FormClientes
                 txtNombreClientes.Enabled = False
                 txtApellidoCliente.Enabled = False
                 txtdireccionCliente.Enabled = False
-                txtfechaCliente.Enabled = False
                 txtTelefonoClientes.Enabled = False
                 txtEmailCliente.Enabled = False
                 limpiar()
@@ -229,7 +217,6 @@ Public Class FormClientes
             txtNombreClientes.Enabled = False
             txtApellidoCliente.Enabled = False
             txtdireccionCliente.Enabled = False
-            txtfechaCliente.Enabled = False
             txtTelefonoClientes.Enabled = False
             txtEmailCliente.Enabled = False
 
@@ -262,7 +249,6 @@ Public Class FormClientes
             txtNombreClientes.Enabled = False
             txtApellidoCliente.Enabled = False
             txtdireccionCliente.Enabled = False
-            txtfechaCliente.Enabled = False
             txtTelefonoClientes.Enabled = False
             txtEmailCliente.Enabled = False
 
@@ -300,7 +286,6 @@ Public Class FormClientes
                             txtNombreClientes.Enabled = False
                             txtApellidoCliente.Enabled = False
                             txtdireccionCliente.Enabled = False
-                            txtfechaCliente.Enabled = False
                             txtTelefonoClientes.Enabled = False
                             txtEmailCliente.Enabled = False
 
@@ -311,7 +296,6 @@ Public Class FormClientes
                             txtNombreClientes.Enabled = False
                             txtApellidoCliente.Enabled = False
                             txtdireccionCliente.Enabled = False
-                            txtfechaCliente.Enabled = False
                             txtTelefonoClientes.Enabled = False
                             txtEmailCliente.Enabled = False
                         End If
@@ -328,7 +312,6 @@ Public Class FormClientes
             txtNombreClientes.Enabled = False
             txtApellidoCliente.Enabled = False
             txtdireccionCliente.Enabled = False
-            txtfechaCliente.Enabled = False
             txtTelefonoClientes.Enabled = False
             txtEmailCliente.Enabled = False
             Call mostrar()

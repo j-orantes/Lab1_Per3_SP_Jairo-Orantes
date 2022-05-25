@@ -37,7 +37,6 @@ Public Class funciones_cliente
             cmd.Parameters.AddWithValue("@nombre", dts.hnombre)
             cmd.Parameters.AddWithValue("@apellido", dts.hapellido)
             cmd.Parameters.AddWithValue("@direccion", dts.hdireccion)
-            cmd.Parameters.AddWithValue("@fecha_nacimiento", dts.hfecha_nacimiento)
             cmd.Parameters.AddWithValue("@telefono", dts.htelefono)
             cmd.Parameters.AddWithValue("@email", dts.hemail)
 
@@ -54,7 +53,6 @@ Public Class funciones_cliente
         End Try
     End Function
 
-    'FUNCION EDITAR
     Public Function editar(ByVal dts As datos_clientes) As Boolean
         Try
             conectado()
@@ -66,7 +64,6 @@ Public Class funciones_cliente
             cmd.Parameters.AddWithValue("@nombre", dts.hnombre)
             cmd.Parameters.AddWithValue("@apellido", dts.hapellido)
             cmd.Parameters.AddWithValue("@direccion", dts.hdireccion)
-            cmd.Parameters.AddWithValue("@fecha_nacimiento", dts.hfecha_nacimiento)
             cmd.Parameters.AddWithValue("@telefono", dts.htelefono)
             cmd.Parameters.AddWithValue("@email", dts.hemail)
 
@@ -82,7 +79,7 @@ Public Class funciones_cliente
             desconectado()
         End Try
     End Function
-    'FUNCION ELIMINAR
+
     Public Function eliminar(ByVal dts As datos_clientes) As Boolean
         Try
             conectado()

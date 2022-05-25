@@ -25,8 +25,6 @@ Partial Class FormClientes
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormClientes))
         Me.bttEliminarCliente = New System.Windows.Forms.Button()
         Me.txtEmailCliente = New System.Windows.Forms.TextBox()
-        Me.txtfechaCliente = New System.Windows.Forms.DateTimePicker()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.txtTelefonoClientes = New System.Windows.Forms.TextBox()
         Me.txtdireccionCliente = New System.Windows.Forms.TextBox()
         Me.txtApellidoCliente = New System.Windows.Forms.TextBox()
@@ -50,6 +48,7 @@ Partial Class FormClientes
         Me.cbCampoCliente = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Eliminar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         CType(Me.DataGridViewClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -70,31 +69,14 @@ Partial Class FormClientes
         '
         'txtEmailCliente
         '
-        Me.txtEmailCliente.Location = New System.Drawing.Point(86, 307)
+        Me.txtEmailCliente.Location = New System.Drawing.Point(86, 263)
         Me.txtEmailCliente.Name = "txtEmailCliente"
         Me.txtEmailCliente.Size = New System.Drawing.Size(265, 23)
         Me.txtEmailCliente.TabIndex = 12
         '
-        'txtfechaCliente
-        '
-        Me.txtfechaCliente.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.txtfechaCliente.Location = New System.Drawing.Point(132, 223)
-        Me.txtfechaCliente.Name = "txtfechaCliente"
-        Me.txtfechaCliente.Size = New System.Drawing.Size(219, 23)
-        Me.txtfechaCliente.TabIndex = 12
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(17, 229)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(109, 15)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Fecha Nacimiento :"
-        '
         'txtTelefonoClientes
         '
-        Me.txtTelefonoClientes.Location = New System.Drawing.Point(86, 265)
+        Me.txtTelefonoClientes.Location = New System.Drawing.Point(86, 221)
         Me.txtTelefonoClientes.Name = "txtTelefonoClientes"
         Me.txtTelefonoClientes.Size = New System.Drawing.Size(265, 23)
         Me.txtTelefonoClientes.TabIndex = 11
@@ -160,16 +142,18 @@ Partial Class FormClientes
         'DataGridViewClientes
         '
         Me.DataGridViewClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridViewClientes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Eliminar})
         Me.DataGridViewClientes.Location = New System.Drawing.Point(384, 36)
         Me.DataGridViewClientes.Name = "DataGridViewClientes"
         Me.DataGridViewClientes.RowTemplate.Height = 25
+        Me.DataGridViewClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridViewClientes.Size = New System.Drawing.Size(588, 311)
         Me.DataGridViewClientes.TabIndex = 18
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(39, 310)
+        Me.Label7.Location = New System.Drawing.Point(39, 266)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(36, 15)
         Me.Label7.TabIndex = 6
@@ -178,7 +162,7 @@ Partial Class FormClientes
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(17, 268)
+        Me.Label6.Location = New System.Drawing.Point(17, 224)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(58, 15)
         Me.Label6.TabIndex = 5
@@ -277,11 +261,12 @@ Partial Class FormClientes
         'cbCampoCliente
         '
         Me.cbCampoCliente.FormattingEnabled = True
-        Me.cbCampoCliente.Items.AddRange(New Object() {"nombre", "apellido"})
+        Me.cbCampoCliente.Items.AddRange(New Object() {"nombre", "apellido", "telefono"})
         Me.cbCampoCliente.Location = New System.Drawing.Point(459, 7)
         Me.cbCampoCliente.Name = "cbCampoCliente"
         Me.cbCampoCliente.Size = New System.Drawing.Size(159, 23)
         Me.cbCampoCliente.TabIndex = 21
+        Me.cbCampoCliente.Text = "nombre"
         '
         'GroupBox2
         '
@@ -298,8 +283,6 @@ Partial Class FormClientes
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.txtEmailCliente)
-        Me.GroupBox1.Controls.Add(Me.txtfechaCliente)
-        Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.txtTelefonoClientes)
         Me.GroupBox1.Controls.Add(Me.txtdireccionCliente)
         Me.GroupBox1.Controls.Add(Me.txtApellidoCliente)
@@ -317,6 +300,11 @@ Partial Class FormClientes
         Me.GroupBox1.TabIndex = 14
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos de Cliente"
+        '
+        'Eliminar
+        '
+        Me.Eliminar.HeaderText = "Eliminar"
+        Me.Eliminar.Name = "Eliminar"
         '
         'FormClientes
         '
@@ -346,8 +334,6 @@ Partial Class FormClientes
 
     Friend WithEvents bttEliminarCliente As Button
     Friend WithEvents txtEmailCliente As TextBox
-    Friend WithEvents txtfechaCliente As DateTimePicker
-    Friend WithEvents Label5 As Label
     Friend WithEvents txtTelefonoClientes As TextBox
     Friend WithEvents txtdireccionCliente As TextBox
     Friend WithEvents txtApellidoCliente As TextBox
@@ -371,4 +357,5 @@ Partial Class FormClientes
     Friend WithEvents cbCampoCliente As ComboBox
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Eliminar As DataGridViewCheckBoxColumn
 End Class
